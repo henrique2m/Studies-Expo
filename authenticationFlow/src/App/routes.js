@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from './Pages/Login';
-import Home from './Pages/Home';
+import * as React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
 
-import Store from './store/dispatch/auth';
+import Store from "./store/dispatch/auth";
 
 const AuthContext = React.createContext();
 const AppStack = createStackNavigator();
@@ -19,7 +19,7 @@ function Routes() {
       let userToken;
 
       try {
-        userToken = await AsyncStorage.getItem('userToken');
+        userToken = await AsyncStorage.getItem("userToken");
       } catch (e) {}
 
       authDispatch.restoreToken(userToken);
@@ -64,8 +64,8 @@ function Routes() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
